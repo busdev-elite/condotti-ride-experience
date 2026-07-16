@@ -122,20 +122,28 @@ button:hover {
 }
 
 /* Styling Halaman Home / Hero Section dengan Background */
+/* Update jarak konten utama agar pas saat layar penuh */
+.content {
+    margin-top: 70px; /* Sesuaikan dengan tinggi navbar Anda */
+    padding: 0;
+    max-width: 100%; /* Ubah jadi 100% agar hero section bisa melebar penuh */
+}
+
+/* Update Hero Section agar Penuh 1 Layar */
 .hero-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90vh; /* Ditinggikan agar gambar latar belakang terlihat lebih megah */
+    min-height: calc(100vh - 70px); /* Menghitung 1 layar penuh dikurangi tinggi navbar */
     text-align: center;
     padding: 40px 20px;
     position: relative;
     
-    /* Pengaturan Gambar Latar Belakang */
-    background-image: url('hero-bg.jpeg'); /* Pastikan nama file sesuai */
+    background-image: url('hero-bg.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    width: 100%;
 }
 
 /* Lapisan Gelap Transparan agar Teks Putih Mudah Dibaca */
@@ -468,4 +476,10 @@ button:hover {
         margin-top: 130px; /* Memberikan ruang ekstra untuk navbar mobile yang bertumpuk */
         padding: 15px;
     }
+}
+
+.experience-section, #registration {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
