@@ -1,13 +1,13 @@
 // Fungsi untuk pindah halaman tanpa reload
 function showPage(pageId) {
-    // Sembunyikan semua halaman
+    // Sembunyikan semua halaman terlebih dahulu
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active-page'));
 
-    // Tunjukkan halaman yang dipilih
+    // Tampilkan halaman yang dipilih
     document.getElementById(pageId).classList.add('active-page');
 
-    // Ubah status aktif pada menu navigasi
+    // Ubah status garis bawah aktif pada menu navigasi
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
         link.classList.remove('active');
@@ -17,18 +17,17 @@ function showPage(pageId) {
     });
 }
 
-// Logika Form Registrasi
+// Logika penanganan form registrasi
 document.getElementById('regForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    // Ambil data input
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
 
-    // Di sini Anda bisa menyambungkan ke Google Sheets / Email Sender nanti.
-    console.log(`Pendaftaran: ${name} - ${email}`);
+    // Untuk sementara data masuk ke log browser console
+    console.log(`Pendaftaran Baru: ${name} - ${email}`);
 
-    // Tampilkan pesan sukses
+    // Bersihkan form dan tampilkan notifikasi sukses
     document.getElementById('regForm').reset();
     document.getElementById('successMessage').classList.remove('hidden');
 });
