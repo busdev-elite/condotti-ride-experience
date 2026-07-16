@@ -320,3 +320,88 @@ button:hover {
         gap: 8px;
     }
 }
+
+/* Styling Halaman Registration */
+#registration h1 {
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+#regForm {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    padding: 40px;
+    max-width: 550px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+#registration .form-group {
+    margin-bottom: 25px;
+}
+
+#registration .form-group label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+#registration .form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 0; /* Membuat sudut kotak tegas/premium */
+    font-size: 14px;
+    color: #111;
+    transition: border-color 0.3s ease;
+    background-color: #fafafa;
+}
+
+#registration .form-group input:focus {
+    outline: none;
+    border-color: #000000;
+    background-color: #ffffff;
+}
+
+#registration button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+#registration button[type="submit"]:hover {
+    background-color: #333333;
+    border-color: #333333;
+}
+
+#registration button[type="submit"]:disabled {
+    background-color: #888;
+    border-color: #888;
+    cursor: not-allowed;
+}
+
+#successMessage {
+    max-width: 550px;
+    margin: 25px auto 0 auto;
+    padding: 15px;
+    background-color: #f4faf4;
+    border: 1px solid #d4edda;
+    color: #155724;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
