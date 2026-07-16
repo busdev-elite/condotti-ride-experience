@@ -123,7 +123,7 @@ button:hover {
     min-height: 75vh;
     text-align: center;
     padding: 40px 20px;
-    background-color: #ffffff; /* Bisa diganti background gambar jika ada */
+    background-color: transparent
 }
 
 .hero-content {
@@ -185,7 +185,7 @@ button:hover {
 }
 
 .btn-primary:hover {
-    background-color: #333333;
+    background-color: #360404;
     border-color: #333333;
 }
 
