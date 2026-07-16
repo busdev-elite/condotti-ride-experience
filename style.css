@@ -6,6 +6,12 @@
     font-family: Arial, sans-serif;
 }
 
+html, body {
+    height: 100%;
+    background-color: #fcfcfc;
+    color: #333;
+}
+
 body {
     background-color: #fcfcfc;
     color: #333;
@@ -200,13 +206,13 @@ button:hover {
 }
 
 .btn-primary {
-    background-color: #ffffff;
+    background-color: transparent;
     color: #000000;
     border: 1px solid #ffffff;
 }
 
 .btn-primary:hover {
-    background-color: #360303;
+    background-color: #000000;
     color: #ffffff;
     border-color: #ffffff;
 }
@@ -218,7 +224,7 @@ button:hover {
 }
 
 .btn-secondary:hover {
-    background-color: #ffffff;
+    background-color: #360303;
     color: #000000;
 }
 
