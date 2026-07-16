@@ -405,3 +405,39 @@ button:hover {
     font-size: 14px;
     letter-spacing: 1px;
 }
+
+/* Efek Transisi Antar Halaman */
+.page {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.page.active-page {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optimasi Tampilan Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 5px 0;
+    }
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-links a {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+    .content {
+        margin-top: 130px; /* Memberikan ruang ekstra untuk navbar mobile yang bertumpuk */
+        padding: 15px;
+    }
+}
