@@ -1,13 +1,10 @@
 // Fungsi untuk pindah halaman tanpa reload
 function showPage(pageId) {
-    // Sembunyikan semua halaman terlebih dahulu
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active-page'));
 
-    // Tampilkan halaman yang dipilih
     document.getElementById(pageId).classList.add('active-page');
 
-    // Ubah status garis bawah aktif pada menu navigasi
     const navLinks = document.querySelectorAll('.nav-links a');
     navLinks.forEach(link => {
         link.classList.remove('active');
@@ -17,17 +14,45 @@ function showPage(pageId) {
     });
 }
 
-// Logika penanganan form registrasi
+// Logika kirim data ke Google Sheets
 document.getElementById('regForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
+    // Mengubah teks tombol saat loading
+    const submitBtn = this.querySelector('button');
+    submitBtn.innerText = "Processing...";
+    submitBtn.disabled = true;
 
-    // Untuk sementara data masuk ke log browser console
-    console.log(`Pendaftaran Baru: ${name} - ${email}`);
+    // Ambil data dari input formulir
+    const dataRegistrasi = {
+        nama: document.getElementById('name').value,
+        whatsapp: document.getElementById('whatsapp').value,
+        instagram: document.getElementById('instagram').value
+    };
 
-    // Bersihkan form dan tampilkan notifikasi sukses
-    document.getElementById('regForm').reset();
-    document.getElementById('successMessage').classList.remove('hidden');
+    // GANTI DENGAN URL GOOGLE APPS SCRIPT ANDA
+    const urlGoogleSheets = "https://script.google.com/macros/s/AKfycbyi9qxmTF5dx3vNgK6hcgLKWn6PzBygfMkH_z-fE0xtKQJ9w1SwOVTrLITgnip-Lsd3/exec";
+
+    fetch(urlGoogleSheets, {
+        method: 'POST',
+        mode: 'no-cors', // Mencegah error CORS pada GitHub Pages gratisan
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataRegistrasi)
+    })
+    .then(() => {
+        // Tampilkan notifikasi sukses
+        document.getElementById('regForm').reset();
+        document.getElementById('successMessage').classList.remove('hidden');
+        
+        submitBtn.innerText = "Register Now";
+        submitBtn.disabled = false;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan, silakan coba lagi.');
+        submitBtn.innerText = "Register Now";
+        submitBtn.disabled = false;
+    });
 });
