@@ -8,15 +8,12 @@
 </head>
 <body>
 
-    <!-- NAVIGASI UTAMA -->
+    <!-- NAVIGASI / MENU UTAMA -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- LOGO CONDOTTI -->
             <div class="logo">
-                <img src="(HQ) Condotti Logo Black.png" alt="Condotti Logo">
+                <img src="logo.png" alt="Condotti Logo">
             </div>
-            
-            <!-- MENU HALAMAN -->
             <ul class="nav-links">
                 <li><a href="#home" class="active" onclick="showPage('home')">HOME</a></li>
                 <li><a href="#experience" onclick="showPage('experience')">THE PRECISION RIDE EXPERIENCE</a></li>
@@ -25,4 +22,38 @@
         </div>
     </nav>
 
-    <!-- Isi konten halaman (main, section, dll) dilanjutkan di bawah sini -->
+    <!-- KONTEN HALAMAN -->
+    <main class="content">
+        <!-- HALAMAN: HOME -->
+        <section id="home" class="page active-page">
+            <h1>Welcome to Condotti</h1>
+            <p>Temukan pengalaman berkendara yang penuh presisi dan eksklusif bersama Condotti Timeless Precision.</p>
+        </section>
+
+        <!-- HALAMAN: THE PRECISION RIDE EXPERIENCE -->
+        <section id="experience" class="page">
+            <h1>The Precision Ride Experience</h1>
+            <p>Detail mengenai acara, jadwal, dan pengalaman berkendara eksklusif yang dirancang khusus untuk Anda.</p>
+        </section>
+
+        <!-- HALAMAN: REGISTRATION -->
+        <section id="registration" class="page">
+            <h1>Event Registration</h1>
+            <form id="regForm">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <button type="submit">Daftar Sekarang</button>
+            </form>
+            <div id="successMessage" class="hidden">Terima kasih! Registrasi Anda berhasil dikirim.</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
